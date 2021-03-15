@@ -2,7 +2,11 @@ public class WiederholungDemoApp {
 
     public static void main(String[] args) {
         printNumbersFor();
-        printNumbersWhile();
+        int[] result = printNumbersWhile();
+
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i] + "; ");
+        }
     }
 
     /*
@@ -37,13 +41,21 @@ public class WiederholungDemoApp {
         System.out.println("counter = " + counter);
     }
 
-    public static void printNumbersWhile() {
-        int sum = 0, counter = 0, i = 1;
+    public static int[] printNumbersWhile() {
+        int sum = 0, counter = 0, i = 0;
 
-        while (i < 1000 && counter <= 10 && sum <= 1000){
+        int[] gefundenZahlen = new int [10];
+        /*
+            gefundenZahlen[0] = 1. zahl
+            gefundenZahlen[1] = 2. zahl
+         */
+
+        while (i < 1000 && counter <= gefundenZahlen.length && sum <= 1000){
             i++;
             if (i % 7 == 0 && i % 3 == 0){
-                System.out.print(i + ", ");
+
+                gefundenZahlen[counter] = i;
+
                 sum = sum + i;
                 counter++;
             }
@@ -51,5 +63,7 @@ public class WiederholungDemoApp {
 
         System.out.println("\nsum = \t" + sum); // \n => Zeilenumbruch \t => Tabulator
         System.out.println("counter = " + counter);
+
+        return gefundenZahlen;
     }
 }
