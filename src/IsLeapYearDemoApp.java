@@ -3,7 +3,7 @@ public class IsLeapYearDemoApp {
     public static void main(String[] args) {
 
 
-        int[] arr = {87, 12, 5, 3, 4, 1, 45};
+
 
         int count = 0;
         for (int i = 0; i <= 2100; i++) {
